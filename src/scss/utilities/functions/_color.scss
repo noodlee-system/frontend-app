@@ -1,0 +1,5 @@
+/* get color from palette function */
+
+@function color($code, $palette: $gray__palette) {
+    @return map-get($palette, $code);
+}
