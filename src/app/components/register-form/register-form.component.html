@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+    <span class="fill-remaining-space">Noodle System Register Form</span>
+</mat-toolbar>
+
+<div *ngIf="!post; else forminfo" novalidate>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="register-form">
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput type="password" placeholder="Password" formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="Confirm email" formControlName="emailConfirmation">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="First name" formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="Last name" formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field class="register-form__element">
+            <input matInput placeholder="Country" formControlName="country">
+        </mat-form-field>
+
+        <div class="register-form__element register-form__actions">
+            <button mat-flat-button color="primary" type="submit" [disabled]="!formGroup.valid">Submit Form</button>
+        </div>
+    </form>
+</div>
+
+<ng-template #forminfo>
+    <div class="container">
+        {{ post | json }}
+    </div>
+</ng-template>

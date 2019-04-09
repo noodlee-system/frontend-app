@@ -1,0 +1,15 @@
+.register-form {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include padding(10px 20px);
+
+    &__element {
+        max-width: 300px;
+    }
+
+    &__actions {
+        @include flexbox;
+        @include justify-content(center);
+    }
+}
