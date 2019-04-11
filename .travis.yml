@@ -5,14 +5,11 @@ node_js:
     - 10
     - 9
     - 8
+cache:
+    directories:
+    - ./node_modules
 install:
     - npm install
-stages:
-    - build
-    - test
-jobs:
-    include:
-        - stage: build
-          script: npm run build
-        - stage: unit-test
-          script: npm test
+script:
+    - npm run build
+    - npm test
