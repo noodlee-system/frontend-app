@@ -1,11 +1,16 @@
 language: node_js
 sudo: false
 node_js:
-  - 11
-  - 10
-  - 9
-  - 8
+    - 11
+    - 10
+    - 9
+    - 8
 install:
-  - npm install
-script:
-  - npm test
+    - npm install
+
+jobs:
+    include:
+        - stage: build
+          script: npm run build
+        - stage: unit-test
+          script: npm test
