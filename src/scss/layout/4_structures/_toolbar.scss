@@ -1,10 +1,8 @@
 .toolbar{
+    @include size($h: $toolbar--height);
+
     &.mat-toolbar {
         background-color: $color__toolbar;
-    }
-
-    &__logo {
-        @include margin(0 10px 0 0);
     }
 
     &__spacer {
