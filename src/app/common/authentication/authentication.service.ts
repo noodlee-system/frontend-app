@@ -9,23 +9,18 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class AuthenticationService {
-    baseUrl: string;
+    private _baseUrl: string;
     token?: string;
 
     constructor(private _http: HttpClient) {
-        this.baseUrl = environment.apiUrl;
+        this._baseUrl = environment.apiUrl;
         this.token = localStorage.getItem("token");
     }
 
-    login(username: string, password: string): void /*Observable<string>*/ {
-        const loginUrl: string = `${this.baseUrl}/auth`;
-        
-        const loginRequestObject: ILoginRequest = {
-            username,
-            password
-        }
+    login(loginRequestObject: ILoginRequest): void /*Observable<string>*/ {
+        const loginUrl: string = `${this._baseUrl}/auth`;
 
-        console.log("loginRequestObject", loginRequestObject);
+        console.log("Login request success!", loginRequestObject);
 
         // Waiting for backend authentication functionalities
         // return this._http.post(loginUrl, loginRequestObject).pipe(

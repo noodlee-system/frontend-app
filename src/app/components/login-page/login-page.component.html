@@ -1,3 +1,7 @@
 <div class="login">
-    <login-form></login-form>
+    <toolbar applicationName={{applicationName}} class="login__toolbar"></toolbar>
+    <section class="login__content">
+        <login-form (loginSubmit)="login($event)"></login-form>
+    </section>
+    <app-footer organizationName={{organizationName}} organizationLink={{organizationLink}}></app-footer>
 </div>

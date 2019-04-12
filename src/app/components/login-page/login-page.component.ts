@@ -1,14 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import ILoginRequest from 'src/app/common/authentication/login-request.model';
+import { AuthenticationService } from 'src/app/common/authentication/authentication.service';
 
 @Component({
-  selector: 'login-page',
-  templateUrl: './login-page.component.html'
+    selector: 'login-page',
+    templateUrl: './login-page.component.html'
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent {
+    applicationName: string;
+    organizationName: string;
+    organizationLink: string;
 
-  constructor() { }
+    constructor( private _authenticationService: AuthenticationService) {
+        this.applicationName = 'Noodlee System';
+        this.organizationName = 'Noodlee System';
+        this.organizationLink = 'https://github.com/noodlee-system';
+    }
 
-  ngOnInit() {
-  }
-
+    login(loginRequestObject: ILoginRequest) {
+        this._authenticationService.login(loginRequestObject)
+    }
 }
