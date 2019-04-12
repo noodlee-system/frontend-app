@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import {
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule,
+    MatToolbarModule
 } from '@angular/material';
 
 const MaterialModulesArray = [
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule,
+    MatToolbarModule,
 ];
 
 @NgModule({

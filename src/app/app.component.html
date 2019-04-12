@@ -1,7 +1,10 @@
-<div class="comming-soon">
-    <div class="comming-soon__logo">{{ applicationName }}</div>
-    <div class="comming-soon__container">
-        <h1 class="comming-soon__header">COMING SOON</h1>
-        <p class="comming-soon__message">Today is {{ currentDate }}</p>
-    </div>
+<div class="app">
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <span class="logo toolbar__logo"></span>
+            <span>{{applicationName}}</span>
+            <span class="toolbar__spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <login-page></login-page>
 </div>

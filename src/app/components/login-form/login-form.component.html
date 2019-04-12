@@ -1,0 +1,17 @@
+<form class="login-form" [formGroup]="loginGroup" (ngSubmit)="onSubmit(loginGroup.value)">
+    <h2 class="login-form__header">Log in</h2>
+
+    <mat-form-field class="login-form__element">
+        <input matInput placeholder="Username" formControlName="username">
+        <mat-error *ngIf="loginGroup.get('username').hasError('required')">This field is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="login-form__element">
+        <input matInput type="password" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="loginGroup.get('password').hasError('required')">This field is required.</mat-error>
+    </mat-form-field>
+
+    <div class="login-form__element">
+        <button mat-flat-button color="primary" type="submit" [disabled]="!loginGroup.valid">Log in</button>
+    </div>
+</form>
