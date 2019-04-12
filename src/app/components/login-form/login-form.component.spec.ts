@@ -13,10 +13,8 @@ describe('LoginFormComponent', () => {
         TestBed.configureTestingModule({
             declarations: [LoginFormComponent],
             imports: [
-                // BrowserModule,
                 MaterialModule,
                 ReactiveFormsModule,
-                // HttpClientModule,
                 FormsModule,
                 BrowserAnimationsModule
             ]

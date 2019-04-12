@@ -1,6 +1,6 @@
 // Production environment settings file
 
-import IEnvironment from './environment.model';
+import IEnvironment from '../app/models/environment.model';
 
 export const environment: IEnvironment = {
     production: true,

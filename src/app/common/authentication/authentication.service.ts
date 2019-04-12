@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import ILoginRequest from './login-request.model';
+import ILoginRequest from '../../models/login-request.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
