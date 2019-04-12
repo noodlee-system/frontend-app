@@ -7,12 +7,6 @@ node_js:
     - 8
 install:
     - npm install
-stages:
-    - build
-    - test
-jobs:
-    include:
-        - stage: build
-          script: npm run build
-        - stage: unit-test
-          script: npm test
+script:
+    - npm run build
+    - npm test
