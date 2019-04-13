@@ -1,0 +1,3 @@
+.logo {
+    @include svg-image($w: 80px, $h: 80px, $source: '../assets/gfx/logo.svg');
+}

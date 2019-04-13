@@ -1,0 +1,11 @@
+.toolbar{
+    @include size($h: $toolbar--height);
+
+    &.mat-toolbar {
+        background-color: $color__toolbar;
+    }
+
+    &__spacer {
+        @include flex(1, 1, auto);
+    }
+}

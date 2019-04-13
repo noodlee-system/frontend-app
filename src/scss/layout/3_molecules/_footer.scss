@@ -1,0 +1,11 @@
+.footer {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include size($h: $footer--height);
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
