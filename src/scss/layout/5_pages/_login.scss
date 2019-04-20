@@ -1,0 +1,28 @@
+.login {
+    $backgroundImagePath: '../assets/gfx/login-background.jpg';
+
+    @include size($h: 100vh, $hNoRem: true);
+    background: url($backgroundImagePath);
+    background-position: center center;
+    background-size: cover;
+
+    &__content {
+        $contentHeight: calc(100vh - #{$toolbar--height} - #{$footer--height});
+
+        @include centralize;
+        @include size($h: $contentHeight, $hNoRem: true);
+    }
+
+    &__toolbar {
+        &.mat-toolbar {
+            background: transparent;
+            color: $color__white;
+            text-shadow: 2px 4px 3px rgba($color__black,0.3);
+        }
+    }
+
+    &__footer {
+        color: $color__white;
+        text-shadow: 2px 4px 3px rgba($color__black,0.3);
+    }
+}

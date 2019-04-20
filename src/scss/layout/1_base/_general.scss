@@ -1,4 +1,15 @@
+html {
+    font-size: 100%;
+}
+
 body {
-    margin: 0;
+    @include margin(0);
+    @include padding(0);
     background-color: $color__background;
+}
+
+* {
+    @include font($family: Regular);
+    box-sizing: border-box;
+    caret-color: $color--primary;
 }

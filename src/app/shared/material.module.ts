@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import {
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
-    MatToolbarModule,
     MatCheckboxModule,
+    MatToolbarModule,
+    MatSelectModule,
     MatButtonModule
 } from '@angular/material';
 

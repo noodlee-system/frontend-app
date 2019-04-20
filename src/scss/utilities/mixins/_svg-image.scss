@@ -1,0 +1,6 @@
+@mixin svg-image($w, $h, $source) {
+    @include size($w, $h);
+    background: url($source);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

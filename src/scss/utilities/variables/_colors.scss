@@ -1,3 +1,12 @@
 // Color definitions file
 
-$color__background: #cfebea;
+$color__gray:           #373535;
+$color__gray--light:    #4d4c4e;
+$color__blue:           #cfebea;
+$color__blue--light:    #e7f5f5;
+$color__white:          #ffffff;
+$color__black:          #000000;
+
+$color--primary:        $color__blue;
+$color__background:     $color__blue;
+$color__toolbar:        $color__blue;
