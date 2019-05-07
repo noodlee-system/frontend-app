@@ -12,6 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+    {path: '', redirectTo: '/login', pathMatch: 'full'},
+    {path: 'login', component: LoginPageComponent},
+    {path: 'register', component: RegisterPageComponent},
+    {path: '**', redirectTo: '/login'}
+];
 
 @NgModule({
     declarations: [
@@ -24,6 +32,7 @@ import { RegisterFormComponent } from './components/register-form/register-form.
         RegisterPageComponent
     ],
     imports: [
+        RouterModule.forRoot(appRoutes),
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
