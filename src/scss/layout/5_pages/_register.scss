@@ -1,0 +1,8 @@
+.register {
+    $backgroundImagePath: '../assets/gfx/login-background.jpg';
+
+    @include size($h: 100vh, $hNoRem: true);
+    background: url($backgroundImagePath);
+    background-position: center center;
+    background-size: cover;
+}
