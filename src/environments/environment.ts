@@ -1,4 +1,4 @@
-import IEnvironment from '../app/models/environment.model';
+import { IEnvironment } from 'src/app/models';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -6,7 +6,7 @@ import IEnvironment from '../app/models/environment.model';
 
 export const environment: IEnvironment = {
     production: false,
-    apiUrl: "http://localhost:8080"
+    apiUrl: 'http://localhost:8080'
 };
 
 /*
