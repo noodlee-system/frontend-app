@@ -9,14 +9,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AuthenticationService } from './common/authentication/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormComponent } from './components/register-form/register-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        FormComponent,
+        RegisterFormComponent,
         LoginFormComponent,
         LoginPageComponent,
         FooterComponent,
@@ -30,7 +30,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
         MaterialModule,
         ReactiveFormsModule,
         HttpClientModule,
-        FormsModule, 
+        FormsModule,
         BrowserAnimationsModule
     ],
     providers: [
