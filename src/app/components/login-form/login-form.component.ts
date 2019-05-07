@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import ILoginRequest from 'src/app/models/login-request.model';
+import { ILoginRequest } from 'src/app/models';
 
 @Component({
     selector: 'login-form',
@@ -8,7 +8,7 @@ import ILoginRequest from 'src/app/models/login-request.model';
 })
 export class LoginFormComponent implements OnInit {
     @Output() loginSubmit = new EventEmitter<ILoginRequest>();
-    
+
     loginGroup: FormGroup
 
     constructor(private _formBuilder: FormBuilder) { }
