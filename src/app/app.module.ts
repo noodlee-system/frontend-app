@@ -11,6 +11,7 @@ import { AuthenticationService } from './common/authentication/authentication.se
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './components/register-form/register-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
         LoginFormComponent,
         LoginPageComponent,
         FooterComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        RegisterPageComponent
     ],
     imports: [
         BrowserModule,
