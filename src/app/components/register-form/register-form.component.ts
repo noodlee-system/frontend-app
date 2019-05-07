@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'register-form',
     templateUrl: './register-form.component.html'
 })
-export class FormComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
     formGroup: FormGroup;
-    titleAlert: string = 'This field is required';
-    post: any = '';
+    titleAlert: string;
 
-    constructor(private _formBuilder: FormBuilder) { }
+    constructor(private _formBuilder: FormBuilder) {
+        this.titleAlert = 'This field is required';
+    }
 
     ngOnInit(): void {
         this.createForm();
@@ -22,10 +23,14 @@ export class FormComponent implements OnInit {
             'password': [null],
             'email': [null],
             'emailConfirmation': [null],
-            'firstName': [null, ],
+            'firstName': [null],
             'lastName': [null],
             'city': [null],
             'country': [null]
         });
+    }
+
+    onSubmit(): void {
+        console.log(this.formGroup.value);
     }
 }
