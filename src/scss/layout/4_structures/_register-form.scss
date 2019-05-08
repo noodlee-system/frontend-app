@@ -1,0 +1,38 @@
+.register-form {
+    @include flexbox;
+    @include justify-content(center);
+    @include flex-direction(column);
+    @include size($w: 50vw, $wNoRem: true);
+    @include padding(10px 20px);
+    text-align: center;
+    background: rgba(#fafafa, 0.975);
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px,
+        rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+
+    &__header {
+        @include justify-content(center);
+    }
+
+    &__container {
+        @include flexbox;
+        @include justify-content(space-between);
+    }
+
+    &__section {
+        @include flex-direction(column);
+        @include flex(50%);
+
+        &:not(:last-child) {
+            @include margin(0 40px 0 0);
+        }
+    }
+
+    &__element {
+        max-width: rem-calc(300px);
+
+        &.mat-form-field {
+            display: inline;
+        }
+    }
+}

@@ -1,8 +1,8 @@
 // Production environment settings file
 
-import IEnvironment from '../app/models/environment.model';
+import { IEnvironment } from 'src/app/models';
 
 export const environment: IEnvironment = {
     production: true,
-    apiUrl: "http://localhost:3000/api"
+    apiUrl: 'http://localhost:8080'
 };
