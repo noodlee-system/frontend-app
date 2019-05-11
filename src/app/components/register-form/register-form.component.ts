@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EmailConfirmValidator } from 'src/app/validators/email-confirm.validator';
 
 @Component({
     selector: 'register-form',
     templateUrl: './register-form.component.html'
 })
 export class RegisterFormComponent implements OnInit {
-    formGroup: FormGroup;
+    registerGroup: FormGroup;
     titleAlert: string;
 
     constructor(private _formBuilder: FormBuilder) {
@@ -17,20 +18,31 @@ export class RegisterFormComponent implements OnInit {
         this.createForm();
     }
 
+    onSubmit(): void {
+        console.log(this.registerGroup.value);
+        this.registerGroup.reset();
+    }
+
     createForm(): void {
-        this.formGroup = this._formBuilder.group({
-            'username': [null],
-            'password': [null],
-            'email': [null],
-            'emailConfirmation': [null],
-            'firstName': [null],
-            'lastName': [null],
-            'city': [null],
-            'country': [null]
+        this.registerGroup = this._formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]],
+            email: ['', [Validators.required, Validators.email]],
+            emailConfirmation: ['', [Validators.required, Validators.email]],
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
+        }, {
+            validators: [EmailConfirmValidator]
         });
     }
 
-    onSubmit(): void {
-        console.log(this.formGroup.value);
+    resetForm(): void {
+        this.registerGroup.reset();
+    }
+
+    emailConfirmationErrorShown(): boolean {
+        return !this.registerGroup.get('emailConfirmation').hasError('required')
+            && !this.registerGroup.get('emailConfirmation').hasError('email')
+            && this.registerGroup.hasError('emailsNotEqual');
     }
 }
