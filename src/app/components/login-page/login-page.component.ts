@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from 'src/app/common/authentication/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ILoginRequest } from 'src/app/models';
 
 @Component({

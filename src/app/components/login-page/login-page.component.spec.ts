@@ -4,11 +4,11 @@ import { LoginPageComponent } from './login-page.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { FooterComponent } from '../footer/footer.component';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { MaterialModule } from 'src/app/modules/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService } from 'src/app/common/authentication/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 describe('LoginPageComponent', () => {
     let component: LoginPageComponent;
