@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { map } from 'rxjs/operators';
-import { IRegisterRequestObject } from '../models';
+import { IRegisterRequestObject } from 'src/app/models';
 
 @Injectable({
     providedIn: 'root'
