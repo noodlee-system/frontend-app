@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ILoginRequest } from '../../_models/login-request.model';
+import { ILoginRequest } from 'src/app/models';
 
 @Component({
     selector: 'login-form',

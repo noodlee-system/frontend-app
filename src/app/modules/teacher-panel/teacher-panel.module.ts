@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { TeacherPanelRoutingModule } from './teacher-panel.routing';
-import { TeacherPanelPageComponent } from './_components/teacher-panel-page/teacher-panel-page.component';
+import { TeacherPanelPageComponent } from './_components';
 
 const components = [
     TeacherPanelPageComponent

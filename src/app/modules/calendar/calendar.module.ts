@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { CalendarRoutingModule } from './calendar.routing';
-import { CalendarPageComponent } from './_components/calendar-page/calendar-page.component';
+import { CalendarPageComponent } from './_components';
 
 const components = [
     CalendarPageComponent

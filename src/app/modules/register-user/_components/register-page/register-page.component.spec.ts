@@ -1,13 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegisterPageComponent } from './register-page.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
-import { ToolbarComponent } from '../toolbar/toolbar.component';
-import { FooterComponent } from '../footer/footer.component';
 import { MaterialModule } from 'src/app/modules/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { ToolbarComponent, FooterComponent } from 'src/app/components';
 
 describe('RegisterPageComponent', () => {
     let component: RegisterPageComponent;

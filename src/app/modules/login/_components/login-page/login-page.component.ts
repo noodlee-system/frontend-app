@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { ILoginRequest } from '../../_models/login-request.model';
+import { AuthenticationService } from 'src/app/services';
+import { ILoginRequest } from 'src/app/models';
 
 @Component({
     selector: 'login-page',

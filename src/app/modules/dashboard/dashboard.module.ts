@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { DashboardRoutingModule } from './dashboard.routing';
-import { DashboardPageComponent } from './_components/dashboard-page/dashboard-page.component';
+import { DashboardPageComponent } from './_components';
 
 const components = [
     DashboardPageComponent
