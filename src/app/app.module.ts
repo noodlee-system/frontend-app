@@ -1,46 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { MaterialModule } from './modules/material.module';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { AuthenticationService } from './services/authentication.service';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginFormComponent } from './components/login-form/login-form.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const appRoutes: Routes = [
-    {path: '', redirectTo: '/login', pathMatch: 'full'},
-    {path: 'login', component: LoginPageComponent},
-    {path: 'register', component: RegisterPageComponent},
-    {path: '**', redirectTo: '/login'}
-];
+import { AuthenticationService } from './services/authentication/authentication.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { BadRequestComponent } from './components/bad-request/bad-request.component';
+import { InternalServerErrorComponent } from './components/internal-server-error/internal-server-error.component';
+import { ForbiddenComponent } from './components/forbidden/forbidden.component';
+import { AppRoutingModule } from './app.routing';
+import { SharedModule } from './modules/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
         AppComponent,
-        RegisterFormComponent,
-        LoginFormComponent,
-        LoginPageComponent,
-        FooterComponent,
-        ToolbarComponent,
-        RegisterPageComponent
+        NotFoundComponent,
+        BadRequestComponent,
+        InternalServerErrorComponent,
+        ForbiddenComponent
     ],
     imports: [
-        RouterModule.forRoot(appRoutes),
+        AppRoutingModule,
         BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        SharedModule
     ],
     providers: [
         AuthenticationService
