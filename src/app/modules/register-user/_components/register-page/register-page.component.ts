@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IRegisterRequestObject } from 'src/app/models';
+import { IRegisterRequestObject } from '../../_models/register-request.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
