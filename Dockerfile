@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+RUN node ./docker/build-script.js
+
 RUN npm run build
 
 ### STAGE 2: Setup ###
