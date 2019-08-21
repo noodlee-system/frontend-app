@@ -1,15 +1,37 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { LandingPageRoutingModule } from './landing-page.routing';
-import { LandingPageComponent } from './_components';
+import { LandingPageComponent } from './landing-page.component';
+import {
+  AboutComponent,
+  ContactComponent,
+  DesignSectionComponent,
+  FooterComponent,
+  HeaderComponent,
+  NavbarComponent,
+  PricingComponent,
+  ReviewsComponent,
+  StatisticsBarComponent,
+  TeamSectionComponent
+} from './_components';
 
 const components = [
-    LandingPageComponent
+  LandingPageComponent,
+  AboutComponent,
+  ContactComponent,
+  DesignSectionComponent,
+  FooterComponent,
+  HeaderComponent,
+  NavbarComponent,
+  PricingComponent,
+  ReviewsComponent,
+  StatisticsBarComponent,
+  TeamSectionComponent
 ];
 
 @NgModule({
-    imports: [MaterialModule, LandingPageRoutingModule],
-    declarations: components,
-    exports: components
+  imports: [MaterialModule, LandingPageRoutingModule],
+  declarations: components,
+  exports: components
 })
-export class LandingPageModule {}
+export class LandingPageModule { }
