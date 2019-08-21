@@ -6,7 +6,7 @@ import { IEnvironment } from 'src/app/models';
 
 export const environment: IEnvironment = {
     production: false,
-    apiUrl: 'http://localhost:8080/api'
+    apiUrl: 'http://localhost:8080'
 };
 
 /*
