@@ -14,6 +14,7 @@ import {
   StatisticsBarComponent,
   TeamSectionComponent
 } from './_components';
+import { SharedModule } from '../shared.module';
 
 const components = [
   LandingPageComponent,
@@ -30,7 +31,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [MaterialModule, LandingPageRoutingModule],
+  imports: [MaterialModule, SharedModule, LandingPageRoutingModule],
   declarations: components,
   exports: components
 })
