@@ -60,4 +60,8 @@
     &--confirmed {
         @include align-items(center);
     }
+
+    &__error {
+        margin-top: 10px;
+    }
 }

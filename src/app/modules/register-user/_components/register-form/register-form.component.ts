@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmailConfirmValidator } from 'src/app/validators/email-confirm.validator';
 import { IRegisterRequestObject } from 'src/app/models';
@@ -8,10 +8,11 @@ import { IRegisterRequestObject } from 'src/app/models';
     templateUrl: './register-form.component.html'
 })
 export class RegisterFormComponent implements OnInit {
+    @Input() errorMessage: string;
+    @Output() registerEvent: EventEmitter<IRegisterRequestObject> = new EventEmitter();
+
     registerGroup: FormGroup;
     titleAlert: string;
-
-    @Output() registerEvent: EventEmitter<IRegisterRequestObject> = new EventEmitter();
 
     constructor(private _formBuilder: FormBuilder) {
         this.titleAlert = 'This field is required';

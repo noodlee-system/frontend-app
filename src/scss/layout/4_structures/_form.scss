@@ -11,4 +11,8 @@
     &__header {
         @include margin(0 0 16px 0);
     }
+
+    &__error {
+        color: red;
+    }
 }

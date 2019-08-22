@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/services';
 import { IRegisterRequestObject } from 'src/app/models';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'register-page',
@@ -12,6 +13,7 @@ export class RegisterPageComponent {
     organizationLink: string;
 
     registrationSuccess: boolean;
+    errorMessage: string;
 
     constructor(private _userService: UserService) {
         this.applicationName = 'Noodlee System';
@@ -19,13 +21,13 @@ export class RegisterPageComponent {
         this.organizationLink = 'https://github.com/noodlee-system';
 
         this.registrationSuccess = false;
+        this.errorMessage = '';
     }
 
     register(registerRequestObject: IRegisterRequestObject): void {
         this._userService.registerUser(registerRequestObject).subscribe(() => {
+            this.errorMessage = '';
             this.registrationSuccess = true;
-        }, (error: Error) => {
-            console.error(error);
-        });
+        }, (errorResponse: HttpErrorResponse) => this.errorMessage = errorResponse.error.message);
     }
 }
