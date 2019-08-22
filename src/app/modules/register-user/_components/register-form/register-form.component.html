@@ -1,42 +1,63 @@
-<mat-toolbar class="register-form__header" color="primary">
-    <span>Register new account</span>
-</mat-toolbar>
-<div novalidate>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="register-form">
-        <section class="register-form__container">
-            <div class="register-form__section">
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="Username" formControlName="username">
-                </mat-form-field>
+<form class="form register-form" [formGroup]="registerGroup" (ngSubmit)="registerUser()">
+    <h2 class="form__header">Register new account</h2>
+    <section class="register-form__container">
+        <div class="register-form__row">
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-error *ngIf="registerGroup.get('username').hasError('required')">This field is required.
+                </mat-error>
+            </mat-form-field>
 
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="First name" formControlName="firstName">
-                </mat-form-field>
-
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="Email" formControlName="email">
-                </mat-form-field>
-
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="Country" formControlName="country">
-                </mat-form-field>
-            </div>
-            <div class="register-form__section">
-                <mat-form-field class="register-form__element">
-                    <input matInput type="password" placeholder="Password" formControlName="password">
-                </mat-form-field>
-
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="Last name" formControlName="lastName">
-                </mat-form-field>
-
-                <mat-form-field class="register-form__element">
-                    <input matInput placeholder="Confirm email" formControlName="emailConfirmation">
-                </mat-form-field>
-            </div>
-        </section>
-        <div>
-            <button mat-flat-button color="primary" type="submit" [disabled]="!formGroup.valid">Submit Form</button>
+            <mat-form-field class="register-form__element">
+                <input type="password" matInput placeholder="Password" formControlName="password">
+                <mat-error *ngIf="registerGroup.get('password').hasError('required')">This field is required.
+                </mat-error>
+                <mat-error *ngIf="registerGroup.get('password').hasError('minlength')">Password will have minimum 6
+                    characters.</mat-error>
+            </mat-form-field>
         </div>
-    </form>
-</div>
+        <div class="register-form__row">
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="First name" formControlName="firstname">
+                <mat-error *ngIf="registerGroup.get('firstname').hasError('required')">This field is required.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="Last name" formControlName="lastname">
+                <mat-error *ngIf="registerGroup.get('lastname').hasError('required')">This field is required.
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="register-form__row">
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="registerGroup.get('email').hasError('required')">This field is required.</mat-error>
+                <mat-error *ngIf="registerGroup.get('email').hasError('email')">Please insert valid email adress.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="Confirm email" formControlName="emailConfirmation">
+                <mat-error *ngIf="registerGroup.get('emailConfirmation').hasError('required')">This field is required.
+                </mat-error>
+                <mat-error *ngIf="registerGroup.get('emailConfirmation').hasError('email')">Please insert valid email
+                    adress.
+                </mat-error>
+                <mat-error *ngIf="emailConfirmationErrorShown()">Provided email adresses are not equal.
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="register-form__row">
+            <mat-form-field class="register-form__element">
+                <input matInput placeholder="Country" formControlName="country">
+                <mat-error *ngIf="registerGroup.get('country').hasError('required')">This field is required.</mat-error>
+            </mat-form-field>
+            <div class="register-form__element register-form__actions">
+                <span class="register-form__reset" (click)="resetForm()">Reset all</span>
+                <button type="submit" mat-flat-button color="primary" [disabled]="!registerGroup.valid">Register</button>
+            </div>
+        </div>
+        <span *ngIf="errorMessage" class="form__error register-form__error">{{errorMessage}}</span>
+    </section>
+</form>

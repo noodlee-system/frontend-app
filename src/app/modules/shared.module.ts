@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from '../components';
+import { CommonModule } from '@angular/common';
 
 const SharedComponentsArray = [
     ToolbarComponent,
@@ -11,6 +12,7 @@ const SharedComponentsArray = [
 ];
 
 const sharedModules = [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
