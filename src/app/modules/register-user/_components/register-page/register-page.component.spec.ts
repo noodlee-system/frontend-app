@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { ToolbarComponent, FooterComponent } from 'src/app/components';
+import { RegisterConfirmationComponent } from '../register-confirmation/register-confirmation.component';
 
 describe('RegisterPageComponent', () => {
     let component: RegisterPageComponent;
@@ -17,6 +18,7 @@ describe('RegisterPageComponent', () => {
             declarations: [
                 RegisterPageComponent,
                 RegisterFormComponent,
+                RegisterConfirmationComponent,
                 ToolbarComponent,
                 FooterComponent
             ],
