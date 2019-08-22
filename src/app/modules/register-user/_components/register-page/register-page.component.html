@@ -1,7 +1,8 @@
 <div class="register">
     <toolbar applicationName={{applicationName}} class="login__toolbar"></toolbar>
     <section class="login__content">
-        <register-form (registerEvent)="register($event)"></register-form>
+        <register-form *ngIf="!registrationSuccess" (registerEvent)="register($event)"></register-form>
+        <register-confirmation *ngIf="registrationSuccess"></register-confirmation>
     </section>
     <app-footer organizationName={{organizationName}} organizationLink={{organizationLink}}></app-footer>
 </div>

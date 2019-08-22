@@ -51,4 +51,13 @@
             cursor: pointer;
         }
     }
+
+    &__mail {
+        @include svg-image($w: 100, $h: 100, $source: '../assets/gfx/user-registered-mail.svg');
+        @include margin(10px 0);
+    }
+
+    &--confirmed {
+        @include align-items(center);
+    }
 }

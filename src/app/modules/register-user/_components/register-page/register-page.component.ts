@@ -11,15 +11,19 @@ export class RegisterPageComponent {
     organizationName: string;
     organizationLink: string;
 
+    registrationSuccess: boolean;
+
     constructor(private _userService: UserService) {
         this.applicationName = 'Noodlee System';
         this.organizationName = 'Noodlee System';
         this.organizationLink = 'https://github.com/noodlee-system';
+
+        this.registrationSuccess = false;
     }
 
     register(registerRequestObject: IRegisterRequestObject): void {
         this._userService.registerUser(registerRequestObject).subscribe(() => {
-            // user successfully registered
+            this.registrationSuccess = true;
         }, (error: Error) => {
             console.error(error);
         });
