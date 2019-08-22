@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmailConfirmValidator } from 'src/app/validators/email-confirm.validator';
+import { IRegisterRequestObject } from 'src/app/models';
 
 @Component({
     selector: 'register-form',
@@ -10,6 +11,8 @@ export class RegisterFormComponent implements OnInit {
     registerGroup: FormGroup;
     titleAlert: string;
 
+    @Output() registerEvent: EventEmitter<IRegisterRequestObject> = new EventEmitter();
+
     constructor(private _formBuilder: FormBuilder) {
         this.titleAlert = 'This field is required';
     }
@@ -18,9 +21,17 @@ export class RegisterFormComponent implements OnInit {
         this.createForm();
     }
 
-    onSubmit(): void {
-        console.log(this.registerGroup.value);
-        this.registerGroup.reset();
+    registerUser(): void {
+        const registerUserObject: IRegisterRequestObject = {
+            username: this.registerGroup.value.username,
+            password: this.registerGroup.value.password,
+            firstname: this.registerGroup.value.firstname,
+            lastname: this.registerGroup.value.lastname,
+            email: this.registerGroup.value.email,
+            country: this.registerGroup.value.country
+        };
+
+        this.registerEvent.emit(registerUserObject);
     }
 
     createForm(): void {
@@ -29,8 +40,9 @@ export class RegisterFormComponent implements OnInit {
             password: ['', [Validators.required, Validators.minLength(6)]],
             email: ['', [Validators.required, Validators.email]],
             emailConfirmation: ['', [Validators.required, Validators.email]],
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            country: ['', Validators.required]
         }, {
             validators: [EmailConfirmValidator]
         });

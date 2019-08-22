@@ -18,8 +18,10 @@ export class RegisterPageComponent {
     }
 
     register(registerRequestObject: IRegisterRequestObject): void {
-        this._userService.register(registerRequestObject).subscribe( (response) => {
-            console.warn("response", response);
+        this._userService.registerUser(registerRequestObject).subscribe(() => {
+            // user successfully registered
+        }, (error: Error) => {
+            console.error(error);
         });
     }
 }

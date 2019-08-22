@@ -39,6 +39,7 @@
         @include flexbox;
         @include justify-content(space-between);
         @include align-items(center);
+        @include flex(0.45);
         @include margin(13px 0 0 0);
     }
 
