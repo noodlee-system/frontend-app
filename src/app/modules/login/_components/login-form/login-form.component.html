@@ -14,4 +14,6 @@
     <div class="login-form__element">
         <button mat-flat-button color="primary" type="submit" [disabled]="!loginGroup.valid">Log in</button>
     </div>
+
+    <span *ngIf="errorMessage" class="form__error register-form__error">{{errorMessage}}</span>
 </form>
