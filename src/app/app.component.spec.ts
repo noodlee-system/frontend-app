@@ -1,41 +1,36 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from './shared/material.module';
+import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
-
-const appRoutes: Routes = [
-    {path: '', redirectTo: '/login', pathMatch: 'full'},
-    {path: 'login', component: LoginPageComponent},
-    {path: 'register', component: RegisterPageComponent},
-    {path: '**', redirectTo: '/login'}
-];
+import { AppRoutingModule } from './app.routing';
+import {
+    BadRequestComponent,
+    ForbiddenComponent,
+    FooterComponent,
+    ToolbarComponent,
+    NotFoundComponent,
+    InternalServerErrorComponent
+} from './components';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
                 AppComponent,
-                LoginPageComponent,
-                LoginFormComponent,
-                RegisterFormComponent,
-                RegisterPageComponent,
                 FooterComponent,
-                ToolbarComponent
+                ToolbarComponent,
+                BadRequestComponent,
+                ForbiddenComponent,
+                NotFoundComponent,
+                InternalServerErrorComponent
             ],
             imports: [
                 BrowserModule,
                 MaterialModule,
-                RouterModule.forRoot(appRoutes),
+                AppRoutingModule,
                 ReactiveFormsModule,
                 HttpClientModule,
                 FormsModule,
