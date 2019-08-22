@@ -15,18 +15,9 @@ export class UserService {
         this._baseUrl = environment.apiUrl;
     }
 
-    register(registerRequestObject: IRegisterRequestObject): Observable<void> {
+    registerUser(registerRequestObject: IRegisterRequestObject): Observable<any> {
         const registerUrl = `${this._baseUrl}/register`;
 
-        return this._http.post(registerUrl, registerRequestObject).pipe(
-            map( (response: any) => {
-                if (response.token) {
-                    localStorage.setItem('token', response.token);
-                    return response.token;
-                }
-
-                return null;
-            })
-        );
+        return this._http.post(registerUrl, registerRequestObject);
     }
 }

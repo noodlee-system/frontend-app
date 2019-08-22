@@ -1,14 +1,6 @@
 .register-form {
-    @include flexbox;
     @include justify-content(center);
-    @include flex-direction(column);
     @include size($w: 50vw, $wNoRem: true);
-    @include padding(10px 20px);
-    text-align: center;
-    background: rgba(#fafafa, 0.975);
-    border: 1px solid #ebebeb;
-    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px,
-        rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
 
     &__header {
         @include justify-content(center);
@@ -16,7 +8,16 @@
 
     &__container {
         @include flexbox;
+        @include flex-direction(column);
+    }
+
+    &__row {
+        @include flexbox;
         @include justify-content(space-between);
+
+        & > .mat-form-field {
+            @include flex(0.45);
+        }
     }
 
     &__section {
@@ -29,10 +30,38 @@
     }
 
     &__element {
-        max-width: rem-calc(300px);
-
         &.mat-form-field {
             display: inline;
         }
+    }
+
+    &__actions {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include flex(0.45);
+        @include margin(13px 0 0 0);
+    }
+
+    &__reset {
+        text-decoration: none;
+        color: blue;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__mail {
+        @include svg-image($w: 100, $h: 100, $source: '../assets/gfx/user-registered-mail.svg');
+        @include margin(10px 0);
+    }
+
+    &--confirmed {
+        @include align-items(center);
+    }
+
+    &__error {
+        margin-top: 10px;
     }
 }

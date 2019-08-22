@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ILoginRequest } from 'src/app/models';
 
@@ -7,9 +7,10 @@ import { ILoginRequest } from 'src/app/models';
     templateUrl: './login-form.component.html'
 })
 export class LoginFormComponent implements OnInit {
+    @Input() errorMessage: string;
     @Output() loginSubmit = new EventEmitter<ILoginRequest>();
 
-    loginGroup: FormGroup
+    loginGroup: FormGroup;
 
     constructor(private _formBuilder: FormBuilder) { }
 
@@ -19,8 +20,8 @@ export class LoginFormComponent implements OnInit {
 
     buildLoginForm(): void {
         this.loginGroup = this._formBuilder.group({
-            'username': [null, Validators.required],
-            'password': [null, Validators.required],
+            username: [null, Validators.required],
+            password: [null, Validators.required],
         });
     }
 
@@ -28,7 +29,7 @@ export class LoginFormComponent implements OnInit {
         const loginRequestObject: ILoginRequest = {
             username: formGroup.get('username').value,
             password: formGroup.get('password').value
-        }
+        };
 
         this.loginSubmit.emit(loginRequestObject);
     }
