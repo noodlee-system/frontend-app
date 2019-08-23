@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AboutSectionItemModel } from '../../_models';
 
 @Component({
-  selector: 'landing-about',
-  templateUrl: './about.component.html'
+    selector: 'landing-about',
+    templateUrl: './about.component.html'
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
+    @Input() aboutItems: AboutSectionItemModel[];
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
-
+    getIconClass(icon: string): string {
+        return `icon icon-${icon} about-section__content-icon`;
+    }
 }

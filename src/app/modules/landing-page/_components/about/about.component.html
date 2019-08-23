@@ -1,1 +1,11 @@
-<p>about works!</p>
+<section class="about-section">
+    <h3 class="about-section__header">About Noodlee System</h3>
+    <p class="about-section__paragraph">Key features of our software</p>
+    <div class="about-section__content">
+        <article class="about-section__content-item" *ngFor="let aboutItem of aboutItems">
+            <i [class]="getIconClass(aboutItem.icon)"></i>
+            <h4 class="about-section__content-header">{{aboutItem.header}}</h4>
+            <p class="about-section__content-text">{{aboutItem.text}}</p>
+        </article>
+    </div>
+</section>
