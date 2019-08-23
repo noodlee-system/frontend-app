@@ -1,0 +1,21 @@
+.navbar {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include size($h: 50px);
+    background: #ffffff;
+
+    &__link {
+        @include size($h: 100%, $hNoRem: true);
+        @include padding(16px);
+        font-size: 15px;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        user-select: none;
+
+        &:hover {
+            background-color: #cccccc;
+        }
+    }
+}

@@ -8,13 +8,13 @@ import {
   DesignSectionComponent,
   FooterComponent,
   HeaderComponent,
-  NavbarComponent,
   PricingComponent,
   ReviewsComponent,
   StatisticsBarComponent,
   TeamSectionComponent
 } from './_components';
 import { SharedModule } from '../shared.module';
+import { NavbarComponent } from '../../components';
 
 const components = [
   LandingPageComponent,

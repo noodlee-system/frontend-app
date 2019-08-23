@@ -7,12 +7,12 @@ import {
     DesignSectionComponent,
     FooterComponent,
     HeaderComponent,
-    NavbarComponent,
     PricingComponent,
     ReviewsComponent,
     StatisticsBarComponent,
     TeamSectionComponent
 } from './_components';
+import { NavbarComponent } from '../../components';
 
 const landingPageComponents = [
     AboutComponent,
@@ -20,7 +20,6 @@ const landingPageComponents = [
     DesignSectionComponent,
     FooterComponent,
     HeaderComponent,
-    NavbarComponent,
     PricingComponent,
     ReviewsComponent,
     StatisticsBarComponent,
@@ -35,6 +34,7 @@ describe('LandingPageComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 LandingPageComponent,
+                NavbarComponent,
                 ...landingPageComponents
             ],
             imports: [RouterTestingModule]
