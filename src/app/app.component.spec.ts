@@ -7,25 +7,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app.routing';
 import {
-    BadRequestComponent,
-    ForbiddenComponent,
     FooterComponent,
     ToolbarComponent,
-    NotFoundComponent,
-    InternalServerErrorComponent
+    ErrorPageComponent,
 } from './components';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+
 
 describe('AppComponent', () => {
+    const ActivatedRouteMock = {
+        data: of({ statusCode: 404 })
+    };
+
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
                 AppComponent,
                 FooterComponent,
                 ToolbarComponent,
-                BadRequestComponent,
-                ForbiddenComponent,
-                NotFoundComponent,
-                InternalServerErrorComponent
+                ErrorPageComponent
             ],
             imports: [
                 BrowserModule,
@@ -36,6 +37,9 @@ describe('AppComponent', () => {
                 FormsModule,
                 BrowserAnimationsModule
             ],
+            providers: [
+                { provide: ActivatedRoute, useValue: ActivatedRouteMock }
+            ]
         }).compileComponents();
     }));
 

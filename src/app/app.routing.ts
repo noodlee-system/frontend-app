@@ -1,27 +1,23 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Route } from '@angular/router';
 // import { AuthGuard } from './common/guards/auth.guard';
-import { BadRequestComponent } from './components/bad-request/bad-request.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AppComponent } from './app.component';
-import { ForbiddenComponent } from './components/forbidden/forbidden.component';
-import { InternalServerErrorComponent } from './components/internal-server-error/internal-server-error.component';
 
-const errorPagesRoutes = [
+const errorPagesRoutes: Route[] = [
     {
-        path: '400',
-        component: BadRequestComponent
-    },
-    {
-        path: '401',
-        component: ForbiddenComponent
+        path: '403',
+        component: ErrorPageComponent,
+        data: { statusCode: 403 }
     },
     {
         path: '404',
-        component: NotFoundComponent
+        component: ErrorPageComponent,
+        data: { statusCode: 404 }
     },
     {
         path: '500',
-        component: InternalServerErrorComponent
+        component: ErrorPageComponent,
+        data: { statusCode: 500 }
     },
 ];
 
