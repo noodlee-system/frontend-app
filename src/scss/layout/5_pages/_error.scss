@@ -1,0 +1,31 @@
+@mixin errorPageBackground() {
+    background-image: url('../assets/gfx/error_page.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.error-page {
+    @include centralize;
+    @include size($w: 100vw, $h: 100vh, $wNoRem: true, $hNoRem: true);
+    min-height: 600px;
+
+    &__content {
+        position: relative;
+        @include size($w: 800px, $h: 600px);
+        @include errorPageBackground;
+
+        h1 {
+            @include margin(5px 0 0 0);
+            font-size: 80px;
+            text-align: center;
+        }
+
+        &-info {
+            position: absolute;
+            bottom: 0;
+            @include size($w: 100%, $wNoRem: true);
+            @include margin(0 0 30px 0);
+            text-align: center;
+        }
+    }
+}

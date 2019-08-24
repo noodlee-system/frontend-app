@@ -2,8 +2,8 @@ version: '3.5'
 
 services:
   frontend:
-    container_name: noodle-frontend
-    image: noodle-frontend
+    container_name: noodlee-frontend
+    image: noodlee-frontend
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
       - '80:80'
     networks:
       - noodlee-system-network
-      
+
 networks:
   noodlee-system-network:
     name: noodlee-system-network
