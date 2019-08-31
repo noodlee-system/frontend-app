@@ -5,22 +5,25 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ILoginRequest } from 'src/app/models';
 
+type LocalStorageItem = string | null;
+
 @Injectable({
     providedIn: 'root'
 })
 export class AuthenticationService {
-    private _baseUrl: string;
-    private _token?: string;
+    private baseUrl: string;
+    private token: LocalStorageItem;
+    private userContext: Object;
 
-    constructor(private _http: HttpClient) {
-        this._baseUrl = environment.apiUrl;
-        this._token = localStorage.getItem('token');
+    constructor(private http: HttpClient) {
+        this.baseUrl = environment.apiUrl;
+        this.token = localStorage.getItem('token');
     }
 
     login(loginRequestObject: ILoginRequest): Observable<string> {
-        const loginUrl = `${this._baseUrl}/auth`;
+        const loginUrl = `${this.baseUrl}/authentication/login`;
 
-        return this._http.post(loginUrl, loginRequestObject).pipe(
+        return this.http.post(loginUrl, loginRequestObject).pipe(
             map( (response: any) => {
                 if (response.token) {
                     localStorage.setItem('token', response.token);
@@ -32,12 +35,16 @@ export class AuthenticationService {
         );
     }
 
-    logout(): void {
-        localStorage.setItem('token', null);
-        this._token = null;
+    async logout(): Promise<void> {
+        await this.removeToken();
     }
 
-    get token(): string {
-        return this._token;
+    getToken(): string {
+        return this.token;
+    }
+
+    private async removeToken(): Promise<void> {
+        await localStorage.removeItem('token');
+        this.token = null;
     }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarLinkModel } from 'src/app/models';
 import { AboutSectionItemModel } from './_models';
+import { LandingPageService } from './_services';
 
 @Component({
     selector: 'app-landing-page',
@@ -9,38 +10,13 @@ import { AboutSectionItemModel } from './_models';
 export class LandingPageComponent {
     navbarLinks: NavbarLinkModel[];
     aboutSectionItems: AboutSectionItemModel[];
+    designSectionParagraph: string;
+    designSectionHeader: string;
 
-    constructor() {
-        this.navbarLinks = [
-            { href: '#about', text: 'about' },
-            { href: '#team', text: 'team', icon: 'user' },
-            { href: '#work', text: 'work', icon: 'th' },
-            { href: '#pricing', text: 'pricing', icon: 'dollar' },
-            { href: '#contact', text: 'contact', icon: 'mail-alt' },
-            { href: 'login', text: 'login', icon: 'login' }
-        ];
-
-        this.aboutSectionItems = [
-            {
-                icon: 'desktop',
-                header: 'Responsive',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
-            },
-            {
-                icon: 'heart',
-                header: 'Passion',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
-            },
-            {
-                icon: 'diamond',
-                header: 'Design',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
-            },
-            {
-                icon: 'cog',
-                header: 'Support',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
-            }
-        ];
+    constructor(private service: LandingPageService) {
+        this.navbarLinks = this.service.getNavbarLinks();
+        this.aboutSectionItems = this.service.getAboutSectionItems();
+        this.designSectionHeader = this.service.getDesignSectionHeader();
+        this.designSectionParagraph = this.service.getDesignSectionParagraph();
     }
 }

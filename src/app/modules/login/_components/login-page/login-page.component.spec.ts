@@ -6,7 +6,7 @@ import { MaterialModule } from 'src/app/modules/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ToolbarComponent } from 'src/app/components/toolbar/toolbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 

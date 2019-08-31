@@ -20,4 +20,22 @@
             background-color: #cccccc;
         }
     }
+
+    &__notifications {
+        $badgeRadius: 11px;
+
+        @include margin(0 $badgeRadius 0 0);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__avatar {
+        @include size($w: 30px, $h: 30px);
+        @include radius(30px);
+    }
+
+    &__user-menu{
+        @include flexbox;
+        @include align-items(center);
+    }
 }

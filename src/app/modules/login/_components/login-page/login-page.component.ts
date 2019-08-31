@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/services';
 import { ILoginRequest } from 'src/app/models';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login-page',
@@ -14,7 +15,10 @@ export class LoginPageComponent {
 
     errorMessage: string;
 
-    constructor( private _authenticationService: AuthenticationService) {
+    constructor(
+        private authenticationService: AuthenticationService,
+        private router: Router
+    ) {
         this.applicationName = 'Noodlee System';
         this.organizationName = 'Noodlee System';
         this.organizationLink = 'https://github.com/noodlee-system';
@@ -22,9 +26,10 @@ export class LoginPageComponent {
     }
 
     login(loginRequestObject: ILoginRequest) {
-        this._authenticationService.login(loginRequestObject).subscribe((response) => {
+        this.authenticationService.login(loginRequestObject).subscribe(() => {
             this.errorMessage = '';
-            console.warn('response', response);
+
+            this.router.navigate(['/dashboard']);
         }, (errorResponse: HttpErrorResponse) => this.errorMessage = errorResponse.error.message);
     }
 }

@@ -4,5 +4,5 @@ import { IEnvironment } from 'src/app/models';
 
 export const environment: IEnvironment = {
     production: true,
-    apiUrl: 'http://localhost:8080'
+    apiUrl: 'http://projektpp.tomasit.pl:48653'
 };

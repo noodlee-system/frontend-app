@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'landing-design-section',
-  templateUrl: './design-section.component.html'
+    selector: 'landing-design-section',
+    templateUrl: './design-section.component.html'
 })
-export class DesignSectionComponent implements OnInit {
+export class DesignSectionComponent {
+    @Input() designHeader: string;
+    @Input() designParagraph: string;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    constructor() { }
 }

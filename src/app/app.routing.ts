@@ -2,6 +2,7 @@ import { Routes, RouterModule, Route } from '@angular/router';
 // import { AuthGuard } from './common/guards/auth.guard';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AppComponent } from './app.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 const errorPagesRoutes: Route[] = [
     {
@@ -43,16 +44,9 @@ const appRoutes: Routes = [
             //     loadChildren: './modules/course/course.module#CourseModule',
             //     // canActivate: [AuthGuard]
             // },
-            // {
-            //     path: 'dashboard',
-            //     loadChildren: './modules/dashboard/dashboard.module#DashboardModule',
-            //     data: { breadcrumb: 'Dashboard'}
-            //     // canActivate: [AuthGuard]
-            // },
             {
                 path: 'home',
-                loadChildren: './modules/landing-page/landing-page.module#LandingPageModule',
-                // canActivate: [AuthGuard]
+                loadChildren: './modules/landing-page/landing-page.module#LandingPageModule'
             },
             {
                 path: 'login',
@@ -61,6 +55,12 @@ const appRoutes: Routes = [
             {
                 path: 'register',
                 loadChildren: './modules/register-user/register-user.module#RegisterUserModule',
+            },
+            {
+                path: 'dashboard',
+                loadChildren: './modules/dashboard/dashboard.module#DashboardModule',
+                data: { breadcrumb: 'Dashboard'},
+                canActivate: [AuthenticationGuard]
             },
             // {
             //     path: 'teacher',

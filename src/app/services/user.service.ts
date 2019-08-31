@@ -16,7 +16,7 @@ export class UserService {
     }
 
     registerUser(registerRequestObject: IRegisterRequestObject): Observable<any> {
-        const registerUrl = `${this._baseUrl}/register`;
+        const registerUrl = `${this._baseUrl}/authentication/register`;
 
         return this._http.post(registerUrl, registerRequestObject);
     }

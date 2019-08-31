@@ -14,7 +14,6 @@ import {
   TeamSectionComponent
 } from './_components';
 import { SharedModule } from '../shared.module';
-import { NavbarComponent } from '../../components';
 
 const components = [
   LandingPageComponent,
@@ -23,7 +22,6 @@ const components = [
   DesignSectionComponent,
   FooterComponent,
   HeaderComponent,
-  NavbarComponent,
   PricingComponent,
   ReviewsComponent,
   StatisticsBarComponent,
