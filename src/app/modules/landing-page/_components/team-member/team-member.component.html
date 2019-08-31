@@ -1,0 +1,11 @@
+<div class="team-member">
+    <img class="team-member__image" [src]="data.image">
+    <div class="team-member__info">
+        <h4>{{data.name}}</h4>
+        <h5>{{data.position}}</h5>
+        <p>{{data.description}}</p>
+        <a class="team-member__contact" [href]="getMailLink()">
+            <i class="icon icon-mail"></i>Contact
+        </a>
+    </div>
+</div>

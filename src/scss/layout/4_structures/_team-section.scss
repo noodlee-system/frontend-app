@@ -1,0 +1,22 @@
+.team-section {
+    @include padding(128px 16px);
+
+    &__header,
+    &__description {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: rem-calc(24px);
+    }
+
+    &__members {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include margin(64px 8px 0 8px);
+
+        .team-member {
+            @include margin(0 8px);
+        }
+    }
+}

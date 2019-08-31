@@ -14,6 +14,7 @@ import {
   TeamSectionComponent
 } from './_components';
 import { SharedModule } from '../shared.module';
+import { TeamMemberComponent } from './_components/team-member/team-member.component';
 
 const components = [
   LandingPageComponent,
@@ -25,7 +26,8 @@ const components = [
   PricingComponent,
   ReviewsComponent,
   StatisticsBarComponent,
-  TeamSectionComponent
+  TeamSectionComponent,
+  TeamMemberComponent
 ];
 
 @NgModule({
