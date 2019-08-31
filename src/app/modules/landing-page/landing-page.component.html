@@ -1,0 +1,15 @@
+<navbar [links]="navbarLinks"></navbar>
+<landing-header></landing-header>
+<landing-about [aboutItems]="aboutSectionItems"></landing-about>
+<landing-design-section
+    [designHeader]="designSectionHeader"
+    [designParagraph]="designSectionParagraph"></landing-design-section>
+<landing-team-section [teamMembers]="teamSectionMembersObject"></landing-team-section>
+<!-- <landing-statistics-bar></landing-statistics-bar> -->
+<!-- <landing-reviews></landing-reviews> -->
+<landing-pricing [pricingItems]="pricingSectionItems"></landing-pricing>
+<landing-contact [data]="contactData"></landing-contact>
+<app-footer
+    class="landing-page__footer"
+    organizationName={{organizationName}}
+    organizationLink={{organizationLink}}></app-footer>

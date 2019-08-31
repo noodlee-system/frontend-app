@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AuthenticationService } from './services/authentication/authentication.service';
 import { AppRoutingModule } from './app.routing';
 import { SharedModule } from './modules/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './components';
+import { AuthenticationService } from './services';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { ErrorPageComponent } from './components';
         SharedModule
     ],
     providers: [
+        AuthenticationGuard,
         AuthenticationService
     ],
     bootstrap: [AppComponent]

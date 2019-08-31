@@ -1,0 +1,29 @@
+$section-background: #f1f1f1;
+
+.design-section {
+    @include flexbox;
+    @include align-items(center);
+    @include padding(128px);
+    background-color: $section-background;
+
+    &__text {
+        @include padding(0 128px 0 0);
+
+        h2 {
+            font-size: rem-calc(24px);
+        }
+
+        p {
+            font-size: rem-calc(15px);
+        }
+    }
+
+    &__image {
+        @include size($w: 700px, $h: 394px);
+        min-width: rem-calc(700px);
+        min-height: rem-calc(394px);
+        background: url('../assets/gfx/phone_design.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

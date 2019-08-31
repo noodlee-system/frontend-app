@@ -5,7 +5,12 @@ import {
     MatCheckboxModule,
     MatToolbarModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule
 } from '@angular/material';
 
 const MaterialModulesArray = [
@@ -14,7 +19,12 @@ const MaterialModulesArray = [
     MatSelectModule,
     MatToolbarModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule
 ];
 
 @NgModule({

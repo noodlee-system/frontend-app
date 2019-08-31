@@ -1,0 +1,48 @@
+.team-member {
+    @include flex(1);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
+                0 2px 10px 0 rgba(0,0,0,0.12);
+
+    &__image {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    &__info {
+        @include padding(0 16px);
+
+        h4 {
+            @include margin(10px 0);
+            font-size: rem-calc(24px);
+        }
+
+        h5 {
+            @include margin(15px 0);
+            opacity: 0.6;
+            font-size: rem-calc(15px);
+        }
+
+        p {
+            font-size: rem-calc(15px);
+        }
+    }
+
+    &__contact {
+        display: inline-block;
+        @include size($w: 100%, $wNoRem: true);
+        vertical-align: middle;
+        @include margin(16px 0);
+        @include padding(8px 16px);
+        text-decoration: none;
+        text-align: center;
+        color: #000000;
+        background-color: #f1f1f1;
+        user-select: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #cccccc;
+        }
+    }
+}

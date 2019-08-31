@@ -28,11 +28,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-user:before { content: '\e800'; }
-.icon-login:before { content: '\e801'; }
-.icon-th:before { content: '\e802'; }
-.icon-desktop:before { content: '\e803'; }
+.icon-location:before { content: '\e800'; }
+.icon-phone:before { content: '\e801'; }
+.icon-user:before { content: '\e802'; }
+.icon-th:before { content: '\e803'; }
 .icon-dollar:before { content: '\e804'; }
-.icon-diamond:before { content: '\e805'; }
-.icon-mail-alt:before { content: '\e806'; }
-.icon-cog:before { content: '\e807'; }
+.icon-mail:before { content: '\e805'; }
+.icon-login:before { content: '\e806'; }
+.icon-desktop:before { content: '\e807'; }
+.icon-diamond:before { content: '\e808'; }
+.icon-cog:before { content: '\e809'; }
+.icon-heart:before { content: '\e80a'; }
+.icon-bell:before { content: '\e80b'; }

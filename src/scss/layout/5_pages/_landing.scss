@@ -1,0 +1,11 @@
+.landing-page {
+    &__footer {
+        color: $color__white;
+        text-shadow: 2px 4px 3px rgba($color__black,0.3);
+
+        footer {
+            @include padding(64px 0);
+            background-color: #000000;
+        }
+    }
+};

@@ -1,0 +1,45 @@
+.full-header {
+    @include flexbox;
+    @include align-items(center);
+    background-position: center;
+    background-size: cover;
+    background-image: url('../assets/gfx/landing-header-background.jpeg');
+    min-height: 100vh;
+    filter: grayscale(50%);
+
+    &__container {
+        @include padding(48px);
+    }
+
+    &__text {
+        font-size: 64px;
+        color: white;
+    }
+
+    &__slogan {
+        @include margin(32px 0 24px 0);
+        font-size: 18px;
+        color: white;
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 18px;
+        color: #000;
+        background-color: #fff;
+        opacity: 0.6;
+        user-select: none;
+        border: none;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+            opacity: 1
+        }
+    }
+}

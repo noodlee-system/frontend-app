@@ -1,0 +1,56 @@
+.pricing-plan {
+    @include margin(8px);
+
+    &__list {
+        @include margin(0);
+        @include padding(0);
+        list-style: none;
+
+        &-header {
+            @include padding(32px 16px);
+            background-color: #000000;
+            color: #ffffff;
+            border-bottom: 1px solid #dddddd;
+            font-size: rem-calc(24px);
+            text-align: center;
+        }
+
+        &-item {
+            @include padding(16px);
+            border-bottom: 1px solid #dddddd;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: rem-calc(15px);
+            text-align: center;
+
+            h2 {
+                font-size: rem-calc(30px);
+                letter-spacing: rem-calc(4px);
+            }
+
+            b {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    &__action {
+        @include padding(24px 16px);
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    &__button {
+        @include padding(12px 24px);
+        color: #ffffff;
+        background-color: #000000;
+        cursor: pointer;
+        user-select: none;
+        border: none;
+
+        &:hover {
+            color: #000000;
+            background-color: #cccccc;
+        }
+    }
+}

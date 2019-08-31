@@ -1,0 +1,41 @@
+.about-section {
+    @include padding(128px 16px);
+
+    &__header {
+        @include margin(10px);
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__paragraph {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    &__content {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include margin(64px 8px 0 8px);
+        text-align: center;
+
+        &-item {
+            @include flex(0.25);
+            @include margin(0 8px);
+        }
+
+        &-icon {
+            @include margin(0 0 16px 0);
+            font-size: 64px;
+        }
+
+        &-header {
+            font-size: 18px;
+        }
+
+        &-text {
+            text-align: left;
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<nav class="navbar">
+    <a href='/home' class="navbar__link">Noodlee System</a>
+    <div class="navbar__links">
+        <a class="navbar__link" *ngFor="let link of links" [href]="link.href">
+            <i *ngIf="link.icon" [class]="'icon icon-' + link.icon"></i>
+            {{link.text}}
+        </a>
+    </div>
+</nav>

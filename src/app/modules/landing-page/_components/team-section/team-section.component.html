@@ -1,0 +1,7 @@
+<section class="team-section">
+    <h3 class="team-section__header">THE TEAM</h3>
+    <p class="team-section__description" >The ones who creates this software</p>
+    <div class="team-section__members">
+        <team-member *ngFor="let member of teamMembers" [data]="member"></team-member>
+    </div>
+</section>

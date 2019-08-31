@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { LandingPageComponent } from './_components/landing-page/landing-page.component';
+import { LandingPageComponent } from './landing-page.component';
 
 const LandingPageRouting: Routes = [
     {

@@ -3,5 +3,5 @@
     <section class="login__content">
         <login-form (loginSubmit)="login($event)" [errorMessage]="errorMessage"></login-form>
     </section>
-    <app-footer organizationName={{organizationName}} organizationLink={{organizationLink}}></app-footer>
+    <app-footer class="login__footer" organizationName={{organizationName}} organizationLink={{organizationLink}} ></app-footer>
 </div>

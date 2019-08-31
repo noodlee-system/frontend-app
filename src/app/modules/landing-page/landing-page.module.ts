@@ -1,15 +1,38 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { LandingPageRoutingModule } from './landing-page.routing';
-import { LandingPageComponent } from './_components';
+import { LandingPageComponent } from './landing-page.component';
+import {
+  AboutComponent,
+  ContactComponent,
+  DesignSectionComponent,
+  HeaderComponent,
+  PricingComponent,
+  ReviewsComponent,
+  StatisticsBarComponent,
+  TeamSectionComponent,
+  TeamMemberComponent,
+  PricingItemComponent
+} from './_components';
+import { SharedModule } from '../shared.module';
 
 const components = [
-    LandingPageComponent
+  LandingPageComponent,
+  AboutComponent,
+  ContactComponent,
+  DesignSectionComponent,
+  HeaderComponent,
+  PricingComponent,
+  PricingItemComponent,
+  ReviewsComponent,
+  StatisticsBarComponent,
+  TeamSectionComponent,
+  TeamMemberComponent
 ];
 
 @NgModule({
-    imports: [MaterialModule, LandingPageRoutingModule],
-    declarations: components,
-    exports: components
+  imports: [MaterialModule, SharedModule, LandingPageRoutingModule],
+  declarations: components,
+  exports: components
 })
-export class LandingPageModule {}
+export class LandingPageModule { }
