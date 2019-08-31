@@ -12,6 +12,9 @@ RUN cd /app && npm set progress=false && npm install --unsafe-perm
 # Copy project files into the docker image
 COPY .  /app
 
+# Run build scripts
+RUN cd /app && node ./docker/build-script.js
+
 RUN cd /app && npm run build
 
 # STEP 2 - Build small nginx image with static website
