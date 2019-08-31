@@ -29,16 +29,16 @@ const appRoutes: Routes = [
         children: [
             ...errorPagesRoutes,
             {
-            path: '',
+                path: '',
                 redirectTo: '/home',
                 pathMatch: 'full'
             },
-            // {
-            //     path: 'calendar',
-            //     loadChildren: './modules/calendar/calendar.module#CalendarModule',
-            //     data: { breadcrumb: 'Calendar'}
-            //     // canActivate: [AuthGuard]
-            // },
+            {
+                path: 'calendar',
+                loadChildren: './modules/calendar-page/calendar-page.module#CalendarPageModule',
+                data: { breadcrumb: 'Calendar'}
+                // canActivate: [AuthGuard]
+            },
             // {
             //     path: 'course',
             //     loadChildren: './modules/course/course.module#CourseModule',
