@@ -1,0 +1,20 @@
+.contact {
+    @include padding(128px 16px);
+
+    &__header,
+    &__description {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: rem-calc(24px);
+    }
+    &__info {
+        @include margin(48px 0 0 0);
+
+        .icon {
+            @include margin(0 16px 0 0);
+            font-size: rem-calc(30px);
+        }
+    }
+}

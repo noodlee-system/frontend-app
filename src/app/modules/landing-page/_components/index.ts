@@ -1,7 +1,6 @@
 export * from './about/about.component';
 export * from './contact/contact.component';
 export * from './design-section/design-section.component';
-export * from './footer/footer.component';
 export * from './header/header.component';
 export * from './pricing/pricing.component';
 export * from './reviews/reviews.component';

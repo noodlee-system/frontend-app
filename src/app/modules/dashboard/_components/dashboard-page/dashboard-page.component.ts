@@ -36,7 +36,7 @@ export class DashboardPageComponent {
         this.userObject = {
             firstname: 'Dawid',
             lastname: 'Skrzypczyk',
-            avatar: this.users.getAuthorImage()
+            avatar: this.users.getLoggedUserImage()
         };
 
         this.sideNavigationItems = [
