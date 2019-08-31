@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PricingPlanModel } from '../../_models';
 
 @Component({
-  selector: 'landing-pricing',
-  templateUrl: './pricing.component.html'
+    selector: 'landing-pricing',
+    templateUrl: './pricing.component.html'
 })
-export class PricingComponent implements OnInit {
+export class PricingComponent {
+    @Input() pricingItems: PricingPlanModel[];
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
-
+    setPricingItemClass(item: PricingPlanModel): string {
+        return item.name === 'Pro'
+            ? 'pricing__item pricing__item--pro'
+            : 'pricing__item';
+    }
 }

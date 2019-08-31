@@ -10,10 +10,11 @@ import {
   PricingComponent,
   ReviewsComponent,
   StatisticsBarComponent,
-  TeamSectionComponent
+  TeamSectionComponent,
+  TeamMemberComponent,
+  PricingItemComponent
 } from './_components';
 import { SharedModule } from '../shared.module';
-import { TeamMemberComponent } from './_components/team-member/team-member.component';
 
 const components = [
   LandingPageComponent,
@@ -22,6 +23,7 @@ const components = [
   DesignSectionComponent,
   HeaderComponent,
   PricingComponent,
+  PricingItemComponent,
   ReviewsComponent,
   StatisticsBarComponent,
   TeamSectionComponent,

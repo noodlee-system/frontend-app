@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarLinkModel } from 'src/app/models';
-import { AboutSectionItemModel, TeamMemberModel, ContactDataModel } from './_models';
+import { AboutSectionItemModel, TeamMemberModel, ContactDataModel, PricingPlanModel } from './_models';
 import { LandingPageService } from './_services';
 
 @Component({
@@ -17,6 +17,7 @@ export class LandingPageComponent {
     organizationName: string;
     organizationLink: string;
     contactData: ContactDataModel;
+    pricingSectionItems: PricingPlanModel[];
 
     constructor(private service: LandingPageService) {
         this.navbarLinks = this.service.getNavbarLinks();
@@ -24,6 +25,7 @@ export class LandingPageComponent {
         this.designSectionHeader = this.service.getDesignSectionHeader();
         this.designSectionParagraph = this.service.getDesignSectionParagraph();
         this.teamSectionMembersObject = this.service.getTeamSectionMembersObject();
+        this.pricingSectionItems = this.service.getPricingSectionItems();
 
         this.applicationName = 'Noodlee System';
         this.organizationName = 'Noodlee System';

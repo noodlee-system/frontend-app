@@ -1,1 +1,7 @@
-<p>pricing works!</p>
+<section class="pricing">
+    <h3 class="pricing__header">PRICING</h3>
+    <p class="pricing__description">Choose a pricing plan that fits your needs.</p>
+    <div class="pricing__content">
+        <pricing-item [class]="setPricingItemClass(item)" *ngFor="let item of pricingItems" [data]="item"></pricing-item>
+    </div>
+</section>

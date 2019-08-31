@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NavbarLinkModel } from 'src/app/models';
-import { AboutSectionItemModel, TeamMemberModel } from '../_models';
+import { AboutSectionItemModel, TeamMemberModel, PricingPlanModel } from '../_models';
 
 @Injectable({
     providedIn: 'root'
@@ -83,6 +83,35 @@ export class LandingPageService {
                 email: 'skrzypmajster@gmail.com'
             }
     ];
+    }
+
+    getPricingSectionItems(): PricingPlanModel[] {
+        return [
+            {
+                name: 'Basic',
+                storageSize: '10GB',
+                emailsCount: 10,
+                domainsCount: 10,
+                supportLength: 'Endless',
+                pricePerMonth: '$ 10',
+            },
+            {
+                name: 'Pro',
+                storageSize: '25GB',
+                emailsCount: 25,
+                domainsCount: 25,
+                supportLength: 'Endless',
+                pricePerMonth: '$ 25',
+            },
+            {
+                name: 'Premium',
+                storageSize: '50GB',
+                emailsCount: 50,
+                domainsCount: 50,
+                supportLength: 'Endless',
+                pricePerMonth: '$ 50',
+            },
+        ];
     }
 
     getAuthorImage(): string {

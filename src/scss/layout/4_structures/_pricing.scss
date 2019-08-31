@@ -1,0 +1,35 @@
+.pricing {
+    @include padding(128px 16px);
+    color: #ffffff;
+    background-color: #616161;
+
+    &__header,
+    &__description {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: rem-calc(24px);
+    }
+
+    &__content {
+        @include flexbox;
+        @include padding(64px 8px 0 8px);
+    }
+
+    &__item {
+        @include flex(1);
+
+        &--pro {
+            .pricing-plan {
+                @include margin(0 8px);
+            }
+
+            .pricing-plan__list-header {
+                @include padding(48px 16px);
+                background-color: #f44336;
+                color: #ffffff;
+            }
+        }
+    }
+}
