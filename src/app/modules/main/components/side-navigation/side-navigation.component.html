@@ -1,0 +1,23 @@
+<nav class="side-navigation">
+    <div class="side-navigation__home">{{applicationName}}</div>
+    <div class="side-navigation__user">
+        <img class="side-navigation__user-image" [src]="user.avatar">
+        <span class="side-navigation__user-greeting">Hello,</span>
+        <span class="side-navigation__user-name">{{user.firstname}} {{user.lastname}}</span>
+    </div>
+    <mat-list>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>Navigation</h3>
+        <a mat-list-item class="side-navigation__item" *ngFor="let link of navigationItems" [routerLink]="[link.route]">
+            <i *ngIf="link.icon" [class]="getIconClass(link.icon)"></i>
+            {{ link.display }}
+        </a>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>Courses</h3>
+        <a mat-list-item [routerLink]="[course.route]" *ngFor="let course of coursesList" class="side-navigation__item">
+            <i class="icon icon-university"></i>
+            {{ course.display }}
+        </a>
+        <p *ngIf="coursesList.length === 0" mat-line>No courses available.</p>
+    </mat-list>
+</nav>

@@ -3,19 +3,16 @@ import { ToolbarComponent } from '../components/toolbar/toolbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FooterComponent, NavbarComponent } from '../components';
+import { FooterComponent, NavbarComponent, NotificationListComponent } from '../components';
 import { CommonModule } from '@angular/common';
-import { SystemNavbarComponent } from '../components/system-navbar/system-navbar.component';
 import { ErrorHandlingHttpInterceptor } from '../authentication/http.interceptor';
-import { SideNavigationComponent } from '../components/side-navigation/side-navigation.component';
 import { RouterModule } from '@angular/router';
 
 const SharedComponentsArray = [
     ToolbarComponent,
     NavbarComponent,
-    SideNavigationComponent,
-    SystemNavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NotificationListComponent
 ];
 
 const sharedModules = [

@@ -1,0 +1,20 @@
+<div *ngIf="dataLoaded" class="main">
+    <div class="main__side-menu">
+        <side-navigation
+            class="side-navigation"
+            [applicationName]="applicationName"
+            [navigationItems]="sideNavigationItems"
+            [coursesList]="coursesList"
+            [user]="userObject"></side-navigation>
+    </div>
+    <main class="main__content">
+        <system-navbar
+            [notifications]="notifications"
+            [user]="userObject"></system-navbar>
+        <!-- Commented because PIX-817
+            <breadcrumbs></breadcrumbs>
+        -->
+        <!-- <section class="breadcrumbs"></section> -->
+        <router-outlet></router-outlet>
+    </main>
+</div>

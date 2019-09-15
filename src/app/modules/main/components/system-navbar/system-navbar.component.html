@@ -1,0 +1,18 @@
+<nav class="system-navbar">
+    <form [formGroup]="searchForm" (ngSubmit)="sendSearchForm(searchForm)">
+        <input formControlName="phrase" class="system-navbar__search" placeholder="Hi. How can we help you?">
+    </form>
+    <div>
+        <notification-list
+            [notifications]="notifications"></notification-list>
+        <button mat-button [matMenuTriggerFor]="userMenu">
+            <img [src]="user.avatar" class="system-navbar__avatar">{{user.firstname}} {{user.lastname}}
+        </button>
+        <mat-menu #userMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="goToUserProfile()">My profile</button>
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>My progress</button>
+            <button mat-menu-item (click)="logout()">Log out</button>
+        </mat-menu>
+    </div>
+</nav>
