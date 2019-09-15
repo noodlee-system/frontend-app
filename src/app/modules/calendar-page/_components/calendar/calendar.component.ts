@@ -41,7 +41,6 @@ const colors: any = {
 @Component({
     selector: 'calendar',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    styleUrls: ['./calendar.component.scss'],
     templateUrl: './calendar.component.html'
 })
 export class CalendarComponent {

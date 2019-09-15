@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarPageRoutingModule } from './calendar-page.routing';
+import { MatButtonModule } from '@angular/material';
 
 const components = [
     CalendarComponent,
@@ -24,7 +25,8 @@ const components = [
             provide: DateAdapter,
             useFactory: adapterFactory
         }),
-        CalendarPageRoutingModule
+        CalendarPageRoutingModule,
+        MatButtonModule
     ],
     declarations: components,
     exports: components
