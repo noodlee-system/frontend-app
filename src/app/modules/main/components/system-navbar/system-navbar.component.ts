@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserAvatarModel } from '../../models';
 
 @Component({
     selector: 'system-navbar',
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class SystemNavbarComponent implements OnInit {
     @Input() notifications: Object[];
-    @Input() user: Object;
+    @Input() user: UserAvatarModel;
 
     searchForm: FormGroup;
 

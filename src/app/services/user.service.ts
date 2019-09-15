@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { map } from 'rxjs/operators';
 import { IRegisterRequestObject } from 'src/app/models';
+import { UserAvatarModel } from '../modules/main/models';
 
 @Injectable({
     providedIn: 'root'
@@ -26,7 +27,7 @@ export class UserService {
         return this.http.get(`${environment.apiUrl}/users/${userId}`);
     }
 
-    getUserAvatarData(): Observable<any> {
+    getUserAvatarData(): Observable<UserAvatarModel> {
         return this.getCurrentUser()
             .pipe(map((user) => {
                 return {

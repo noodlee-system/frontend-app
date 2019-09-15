@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SideNavigationItemModel } from '../../models';
+import { SideNavigationItemModel, UserAvatarModel } from '../../models';
 
 @Component({
     selector: 'side-navigation',
@@ -9,7 +9,7 @@ export class SideNavigationComponent {
     @Input() applicationName: string;
     @Input() navigationItems: SideNavigationItemModel[];
     @Input() coursesList: SideNavigationItemModel[];
-    @Input() user: Object;
+    @Input() user: UserAvatarModel;
 
     constructor() { }
 
