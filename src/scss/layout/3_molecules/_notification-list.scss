@@ -1,3 +1,15 @@
 .notification-list {
+    @include size($w: 400px);
 
+    &__button {
+        &.mat-button {
+            min-width: rem-calc(14px);
+        }
+    }
+
+    &__counter {
+        &.mat-badge-medium.mat-badge-after .mat-badge-content {
+            right: rem-calc(-16px);
+        }
+    }
 }

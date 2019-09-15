@@ -1,0 +1,22 @@
+.page {
+    @include padding(0 45px);
+
+    &__header {
+        @include padding(29px 0);
+
+        &-icon {
+            @include padding(10px 7px);
+            font-size: rem-calc(24px);
+            color: #fff;
+            background-color: #000;
+            border-radius: 3px;
+        }
+
+        h1 {
+            display: inline-block;
+            @include margin(0 0 0 20px);
+            font-size: rem-calc(16px);
+            font-weight: 700;
+        }
+    }
+}

@@ -1,3 +1,50 @@
 .side-navigation {
+    @include size($w: 215px, $h: 100vh, $wNoRem: true, $hNoRem: true);
+    border-right: 2px solid black;
 
+    &__list.mat-list-base {
+        @include padding(0px);
+    }
+
+    &__home {
+        @include flexbox;
+        @include align-items(center);
+        @include size($h: 50px, $w: 215px);
+        @include padding(0 16px);
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    &__user {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include padding(10px 0);
+
+        &-image {
+            $user-image-size: 95px;
+            @include size($w: $user-image-size, $h: $user-image-size);
+            @include radius($user-image-size);
+        }
+
+        &-greeting {
+            @include margin(16px 0 0 0);
+            font-size: 12px;
+            color: gray;
+        }
+
+        &-name {
+            @include margin(2px 0 0 0);
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+    &__item {
+        text-decoration: none;
+
+        i {
+            @include padding(0 2px 0 0);
+        }
+    }
 }

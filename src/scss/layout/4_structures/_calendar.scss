@@ -1,0 +1,19 @@
+.calendar {
+    &__header {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include margin(10px 0 20px 0);
+    }
+
+    &__actions {
+        button {
+            @include margin(0 1px);
+        }
+    }
+
+    &__action {
+        background: #000;
+        color: #fff;
+    }
+}
