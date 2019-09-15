@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-course-page',
-  templateUrl: './course-page.component.html'
+  selector: 'app-course-list-page',
+  templateUrl: './course-list-page.component.html'
 })
-export class CoursePageComponent {
+export class CourseListPageComponent {
     constructor(private route: ActivatedRoute) {}
 
     getRouteIcon(): string {

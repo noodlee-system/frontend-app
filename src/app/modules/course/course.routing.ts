@@ -1,11 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
-import { CoursePageComponent } from './_components/course-page/course-page.component';
+import { CoursePageComponent, CourseListPageComponent } from './_components';
 
 const CourseRouting: Routes = [
     {
         path: '',
-        component: CoursePageComponent,
+        component: CourseListPageComponent,
         pathMatch: 'full'
+    },
+    {
+        path: ':id',
+        component: CoursePageComponent
     }
 ];
 
