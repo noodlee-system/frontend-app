@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ILoginRequest } from 'src/app/models';
+import { Router } from '@angular/router';
 
 type LocalStorageItem = string | null;
 
@@ -15,7 +16,10 @@ export class AuthenticationService {
     private token: LocalStorageItem;
     private userContext: Object;
 
-    constructor(private http: HttpClient) {
+    constructor(
+        private http: HttpClient,
+        private router: Router
+    ) {
         this.baseUrl = environment.apiUrl;
         this.token = localStorage.getItem('token');
     }
@@ -37,6 +41,8 @@ export class AuthenticationService {
 
     async logout(): Promise<void> {
         await this.removeToken();
+
+        this.router.navigate(['/']);
     }
 
     getToken(): string {
