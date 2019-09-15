@@ -3,7 +3,7 @@ import { LandingPageComponent } from './landing-page.component';
 
 const LandingPageRouting: Routes = [
     {
-        path: '',
+        path: 'home',
         component: LandingPageComponent,
         pathMatch: 'full'
     }
