@@ -1,0 +1,18 @@
+<button *ngIf="notifications.length > 0; else no_notifications" mat-button [matMenuTriggerFor]="notificationList" class="notification-list__button">
+    <span class="notification-list__counter" [matBadge]="notifications.length" matBadgeOverlap="false">
+        <i class="icon icon-bell"></i>
+    </span>
+</button>
+<mat-menu #notificationList="matMenu" xPosition="before" class="notification-list">
+    <mat-list>
+        <h3 matSubheader>Notifications</h3>
+        <ng-container *ngFor="let notification of notifications">
+            <mat-divider></mat-divider>
+            <mat-list-item>{{notification.message}}</mat-list-item>
+        </ng-container>
+    </mat-list>
+</mat-menu>
+
+<ng-template #no_notifications>
+    <i class="icon icon-bell"></i>
+</ng-template>
