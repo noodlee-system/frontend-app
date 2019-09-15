@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { map } from 'rxjs/operators';
 import { IRegisterRequestObject } from 'src/app/models';
+import { UserAvatarModel } from '../modules/main/models';
 
 @Injectable({
     providedIn: 'root'
@@ -11,14 +12,40 @@ import { IRegisterRequestObject } from 'src/app/models';
 export class UserService {
     private _baseUrl: string;
 
-    constructor(private _http: HttpClient) {
+    constructor(private http: HttpClient) {
         this._baseUrl = environment.apiUrl;
     }
 
     registerUser(registerRequestObject: IRegisterRequestObject): Observable<any> {
         const registerUrl = `${this._baseUrl}/authentication/register`;
 
-        return this._http.post(registerUrl, registerRequestObject);
+        return this.http.post(registerUrl, registerRequestObject);
+    }
+
+    getCurrentUser(): Observable<any> {
+        const userId = 0;
+        return this.http.get(`${environment.apiUrl}/users/${userId}`);
+    }
+
+    getUserAvatarData(): Observable<UserAvatarModel> {
+        return this.getCurrentUser()
+            .pipe(map((user) => {
+                return {
+                    firstname: user.firstname,
+                    lastname: user.lastname,
+                    avatar: this.getUserDefaultAvatar('Jan', 'Kowalski')
+                };
+            }));
+    }
+
+    getUserDefaultAvatar(firstName: string, lastName: string): string {
+        const rootPath = 'https://ui-avatars.com/api';
+        const name = `${firstName}+${lastName}`;
+        const backgroundColor = 'ADADAD';
+        const fontColor = 'fff';
+        const avatarSize = '300';
+
+        return `${rootPath}/?name=${name}&background=${backgroundColor}&color=${fontColor}&size=${avatarSize}`;
     }
 
     getLoggedUserImage(): string {

@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './components';
 import { AuthenticationService } from './services';
 import { AuthenticationGuard } from './guards/authentication.guard';
+import { LoginModule } from './modules/login/login.module';
+import { MainModule } from './modules/main/main.module';
+import { LandingPageModule } from './modules/landing-page/landing-page.module';
+import { NotificationListComponent } from './components/notification-list/notification-list.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +21,9 @@ import { AuthenticationGuard } from './guards/authentication.guard';
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
-        SharedModule
+        LoginModule,
+        MainModule,
+        LandingPageModule
     ],
     providers: [
         AuthenticationGuard,

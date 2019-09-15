@@ -1,14 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-user-panel-page',
-  templateUrl: './user-panel-page.component.html'
+    selector: 'app-user-panel-page',
+    templateUrl: './user-panel-page.component.html'
 })
-export class UserPanelPageComponent implements OnInit {
+export class UserPanelPageComponent {
+    constructor(private route: ActivatedRoute) { }
 
-  constructor() { }
+    getRouteIcon(): string {
+        const icon: string = this.route.snapshot.data['headerIcon'];
 
-  ngOnInit() {
-  }
+        return icon
+            ? `icon ${icon} page__header-icon`
+            : '';
+    }
 
+    getPageHeader(): string {
+        const header: string = this.route.snapshot.data['breadcrumb'];
+
+        return header ? header : '';
+    }
 }

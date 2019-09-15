@@ -1,8 +1,7 @@
-<system-navbar [notifications]="notifications" [user]="userObject"></system-navbar>
-<div class="page" style="display: flex; flex-direction: column">
-    <side-navigation
-        class="side-navigation"
-        [navigationItems]="sideNavigationItems"
-        [coursesList]="coursesList"></side-navigation>
-    <div style="width: 80%"></div>
+<div class="page dashboard">
+    <div class="page__header">
+        <i [class]="getRouteIcon()"></i>
+        <h1>{{getPageHeader()}}</h1>
+    </div>
+    <div>dashboard page works</div>
 </div>

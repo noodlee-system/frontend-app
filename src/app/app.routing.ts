@@ -1,8 +1,7 @@
 import { Routes, RouterModule, Route } from '@angular/router';
-// import { AuthGuard } from './common/guards/auth.guard';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { AppComponent } from './app.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { MainComponent } from './modules/main/main.component';
 
 const errorPagesRoutes: Route[] = [
     {
@@ -25,60 +24,55 @@ const errorPagesRoutes: Route[] = [
 const appRoutes: Routes = [
     {
         path: '',
-        component: AppComponent,
+        component: MainComponent,
         children: [
-            ...errorPagesRoutes,
             {
-            path: '',
+                path: '',
                 redirectTo: '/home',
                 pathMatch: 'full'
             },
-            // {
-            //     path: 'calendar',
-            //     loadChildren: './modules/calendar/calendar.module#CalendarModule',
-            //     data: { breadcrumb: 'Calendar'}
-            //     // canActivate: [AuthGuard]
-            // },
-            // {
-            //     path: 'course',
-            //     loadChildren: './modules/course/course.module#CourseModule',
-            //     // canActivate: [AuthGuard]
-            // },
             {
-                path: 'home',
-                loadChildren: './modules/landing-page/landing-page.module#LandingPageModule'
+                path: 'calendar',
+                loadChildren: './modules/calendar-page/calendar-page.module#CalendarPageModule',
+                data: {
+                    breadcrumb: 'Calendar',
+                    headerIcon: 'icon-calendar'
+                },
+                canActivate: [AuthenticationGuard]
             },
             {
-                path: 'login',
-                loadChildren: './modules/login/login.module#LoginModule',
-            },
-            {
-                path: 'register',
-                loadChildren: './modules/register-user/register-user.module#RegisterUserModule',
+                path: 'course',
+                loadChildren: './modules/course/course.module#CourseModule',
+                data: {
+                    breadcrumb: 'Courses',
+                    headerIcon: 'icon-list'
+                },
+                canActivate: [AuthenticationGuard]
             },
             {
                 path: 'dashboard',
                 loadChildren: './modules/dashboard/dashboard.module#DashboardModule',
-                data: { breadcrumb: 'Dashboard'},
+                data: {
+                    breadcrumb: 'Dashboard',
+                    headerIcon: 'icon-dashboard'
+                },
                 canActivate: [AuthenticationGuard]
             },
-            // {
-            //     path: 'teacher',
-            //     loadChildren: './modules/teacher-panel/teacher-panel.module#TeacherPanelModule',
-            //     data: { breadcrumb: 'Teacher panel'}
-            //     // canActivate: [AuthGuard]
-            // },
-            // {
-            //     path: 'user',
-            //     loadChildren: './modules/user-panel/user-panel.module#UserPanelModule',
-            //     data: { breadcrumb: 'User panel'}
-            //     // canActivate: [AuthGuard]
-            // },
             {
-                path: '**',
-                redirectTo: '404'
+                path: 'user',
+                loadChildren: './modules/user-panel/user-panel.module#UserPanelModule',
+                data: {
+                    breadcrumb: 'User panel',
+                    headerIcon: 'icon-user'
+                },
+                canActivate: [AuthenticationGuard]
             }
-        ]
+        ],
+    },
+    ...errorPagesRoutes,
+    {
+        path: '**',
+        redirectTo: '404'
     }
 ];
 

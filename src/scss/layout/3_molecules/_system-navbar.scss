@@ -1,0 +1,35 @@
+.system-navbar {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include size($h: 50px);
+    @include padding(0px 10px);
+    background: rgba(0,0,0,.03);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),
+                0 1px 1px 0 rgba(0,0,0,.14),
+                0 1px 3px 0 rgba(0,0,0,.12);
+
+    & > div:last-child {
+        @include flexbox;
+        @include align-items(center);
+    }
+
+    &__avatar {
+        $avatar-size: 35px;
+
+        @include size($w: $avatar-size, $h: $avatar-size);
+        @include margin(0 5px 0 0);
+        @include radius($avatar-size);
+    }
+
+    &__search {
+        @include size($w: 500px, $h: 50px);
+        @include padding(0px);
+        border: none;
+        background: transparent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

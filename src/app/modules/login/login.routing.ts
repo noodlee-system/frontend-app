@@ -3,7 +3,7 @@ import { LoginPageComponent } from './_components/login-page/login-page.componen
 
 const LoginRouting: Routes = [
     {
-        path: '',
+        path: 'login',
         component: LoginPageComponent,
         pathMatch: 'full'
     }

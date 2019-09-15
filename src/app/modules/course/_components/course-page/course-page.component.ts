@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-page',
   templateUrl: './course-page.component.html'
 })
-export class CoursePageComponent implements OnInit {
+export class CoursePageComponent {
+    constructor(private route: ActivatedRoute) {}
 
-  constructor() { }
+    getRouteIcon(): string {
+        const icon: string = this.route.snapshot.data['headerIcon'];
 
-  ngOnInit() {
-  }
+        return icon
+            ? `icon ${icon} page__header-icon`
+            : '';
+    }
 
+    getPageHeader(): string {
+        const header: string = this.route.snapshot.data['breadcrumb'];
+
+        return header ? header : '';
+    }
 }
